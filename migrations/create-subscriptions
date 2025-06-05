@@ -1,0 +1,53 @@
+// src/migrations/20250604142012-create-subscriptions.js
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('subscriptions', {
+      subscription_id: {
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+        primaryKey: true
+      },
+      user_id: {
+        type: Sequelize.UUID,
+        allowNull: false,
+        references: { model: 'users', key: 'user_id' }
+      },
+      type: {
+        type: Sequelize.ENUM('basic', 'premium', 'unlimited'),
+        allowNull: false
+      },
+      start_date: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      end_date: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      price: {
+        type: Sequelize.DECIMAL(10, 2),
+        allowNull: false
+      },
+      status: {
+        type: Sequelize.ENUM('active', 'expired', 'cancelled'),
+        allowNull: false,
+        defaultValue: 'active'
+      },
+      features: {
+        type: Sequelize.JSON,
+        allowNull: false
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: false
+      }
+    });
+  },
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('subscriptions');
+  }
+};

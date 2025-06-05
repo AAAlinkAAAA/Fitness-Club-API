@@ -1,0 +1,40 @@
+<!-- src/public/classes.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Занятия</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body class="bg-gradient-to-r from-blue-900 to-blue-500 min-h-screen flex flex-col">
+  <header class="bg-gray-900 text-white py-4 fixed w-full top-0">
+    <nav class="container mx-auto flex justify-between items-center px-4">
+      <div class="text-2xl font-bold">Fitness Center</div>
+      <div class="space-x-4">
+        <a href="/dashboard.html" class="hover:text-blue-300">Личный кабинет</a>
+        <a href="/classes.html" class="hover:text-blue-300">Занятия</a>
+        <a href="/subscriptions.html" class="hover:text-blue-300">Подписки</a>
+        <a href="/bookings.html" class="hover:text-blue-300">Мои брони</a>
+        <a href="/profile.html" class="hover:text-blue-300">Профиль</a>
+        <a href="#" id="logout" class="hover:text-blue-300">Выйти</a>
+      </div>
+    </nav>
+  </header>
+  <main class="flex-grow container mx-auto px-4 py-20 text-white">
+    <h1 class="text-3xl font-bold mb-6">Расписание занятий</h1>
+    <div class="mb-6">
+      <label for="calendar" class="block text-lg mb-2">Выберите дату</label>
+      <input type="text" id="calendar" class="w-full max-w-xs px-4 py-2 rounded-lg text-gray-700" readonly>
+    </div>
+    <div id="schedulesList" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    <p id="errorMessage" class="text-red-500 text-sm mt-4 hidden"></p>
+  </main>
+  <footer class="bg-gray-900 text-white py-4 text-center">
+    <p>© 2025 Fitness Center</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="/js/classes.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+// src/migrations/20250604142034-create-payments.js
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('payments', {
+      payment_id: {
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+        primaryKey: true
+      },
+      user_id: {
+        type: Sequelize.UUID,
+        allowNull: false,
+        references: { model: 'users', key: 'user_id' }
+      },
+      subscription_id: {
+        type: Sequelize.UUID,
+        allowNull: false,
+        references: { model: 'subscriptions', key: 'subscription_id' }
+      },
+      amount: {
+        type: Sequelize.DECIMAL(10, 2),
+        allowNull: false
+      },
+      payment_date: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.NOW
+      },
+      payment_method: {
+        type: Sequelize.ENUM('card', 'paypal', 'mock'),
+        allowNull: false
+      },
+      status: {
+        type: Sequelize.ENUM('completed', 'failed', 'pending'),
+        allowNull: false,
+        defaultValue: 'pending'
+      },
+      transaction_id: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: false
+      }
+    });
+  },
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('payments');
+  }
+};

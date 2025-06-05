@@ -1,0 +1,323 @@
+/* Общие стили для страницы */
+body {
+    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Навигация */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.nav-link {
+    color: #34495e;
+    font-weight: 500;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #3498db;
+}
+
+.nav-link.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+
+/* Контейнер */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 15px;
+}
+
+/* Секции */
+.content-section {
+    display: none;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.content-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    border-left: 4px solid #3498db;
+    padding-left: 10px;
+}
+
+/* Карточки */
+.card {
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+/* Секция "Подписки" */
+#currentSubscription, #subscriptionPlans {
+    padding: 15px;
+}
+
+#currentSubscription p {
+    margin: 5px 0;
+    color: #34495e;
+}
+
+#subscriptionPlans .subscription-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#subscriptionPlans .subscription-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Разные стили для каждого плана */
+#subscriptionPlans .basic .card-header {
+    background: linear-gradient(135deg, #48c6ef, #6f86d6);
+    color: #ffffff;
+}
+
+#subscriptionPlans .premium .card-header {
+    background: linear-gradient(135deg, #f6d365, #fda085);
+    color: #ffffff;
+}
+
+#subscriptionPlans .unlimited .card-header {
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    color: #ffffff;
+}
+
+#subscriptionPlans .card-header {
+    padding: 20px;
+    border-bottom: none;
+}
+
+#subscriptionPlans .subscription-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#subscriptionPlans .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+#subscriptionPlans .card-body {
+    padding: 25px;
+    background-color: #ffffff;
+}
+
+#subscriptionPlans .card-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#subscriptionPlans .features-list {
+    margin-bottom: 20px;
+}
+
+#subscriptionPlans .features-list li {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#subscriptionPlans .features-list li i {
+    color: #27ae60;
+    font-size: 1.2rem;
+}
+
+#subscriptionPlans .btn-subscribe {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 25px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#subscriptionPlans .btn-subscribe:hover {
+    background: linear-gradient(135deg, #2980b9, #1e6fa6);
+    transform: scale(1.05);
+}
+
+/* Анимация появления */
+#subscriptionPlans .subscription-card {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Секция "Профиль" */
+#profileForm {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#profileForm .form-label {
+    color: #34495e;
+    font-weight: 500;
+}
+
+#profileForm .form-control {
+    border-radius: 5px;
+    border: 1px solid #dcdcdc;
+    padding: 10px;
+}
+
+#profileForm .btn-primary {
+    background-color: #3498db;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#profileForm .btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Кнопка "Выйти" */
+#logoutBtn {
+    border-color: #e74c3c;
+    color: #e74c3c;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#logoutBtn:hover {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .nav-link {
+        margin-right: 0;
+        padding: 10px 15px;
+    }
+
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    #profileForm {
+        max-width: 100%;
+    }
+}
+
+/* Секция "Записаться на занятие" */
+#availableSchedules .schedule-card {
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#availableSchedules .schedule-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.15), -8px -8px 20px rgba(255, 255, 255, 0.9);
+}
+
+#availableSchedules .card-body {
+    padding: 20px;
+}
+
+#availableSchedules .card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+#availableSchedules .card-text {
+    font-size: 0.95rem;
+    color: #7f8c8d;
+    margin-bottom: 8px;
+}
+
+#availableSchedules .btn-book {
+    background: linear-gradient(135deg, #27ae60, #219653);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 25px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#availableSchedules .btn-book:hover {
+    background: linear-gradient(135deg, #219653, #1b7b45);
+    transform: scale(1.05);
+}
+
+#availableSchedules .btn-secondary {
+    background-color: #bdc3c7;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #7f8c8d;
+    border-radius: 25px;
+}
+
+/* Анимация появления */
+#availableSchedules .schedule-card {
+    animation: fadeIn 0.5s ease forwards;
+}
